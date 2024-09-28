@@ -27,7 +27,7 @@ const TodoAppa = () => {
 
   return (
     <div className="todo-container">
-      <div className="container mt-5">
+      <div className="container  p-3">
         <h1 className="text-center text-white m-3 p-3 mb-4">To-Do List</h1>
 
         <div className="input-group mb-3">
@@ -50,7 +50,7 @@ const TodoAppa = () => {
                 {/* Add the checkbox */}
                 <input
                   type="checkbox"
-                  className="form-check-input me-2 m-3"
+                  className="form-check-input me-2 m-3 p-2"
                   checked={task.completed}
                   onChange={() => toggleCompletion(task.id)}
                 />
@@ -61,7 +61,7 @@ const TodoAppa = () => {
                   {task.task}
                 </span>
                 <button
-                  className="btn btn-danger btn-sm"
+                  className="btn btn-danger btn-sm m-3"
                   onClick={() => deleteTask(task.id)}
                 >
                   Delete
