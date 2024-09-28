@@ -34,10 +34,11 @@ const TodoApp = () => {
 
   return (
     
-    <div className="container todo-container bg-body-primary mt-5">
-      <h1 className="text-center text-white">To-Do List</h1>
+    <div className="container todo-container bg-body-primary mt-3">
+      <h1 className="text-center text-white p-3 m-3">To-Do List</h1>
 
-      <div className="input-group mb-3">
+      <div className="input-group mb-3 ">
+       
         <input
           type="text"
           className="form-control text-black p"
@@ -45,10 +46,42 @@ const TodoApp = () => {
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
         />
+        
         <button className="btn btn-secondary p-2" onClick={addTask}>
+        
+        
           Add Task
         </button>
+        
       </div>
+      
+      <div className="task-list">
+          {tasks.map((task) => (
+            <div key={task.id} className="card mb-3">
+              <div className="card-body d-flex justify-content-between align-items-center">
+                {/* Add the checkbox */}
+                <input
+                  type="checkbox"
+                  className="form-check-input me-2"
+                  checked={task.completed}
+                  onChange={() => toggleCompletion(task.id)}
+                />
+                {/* Apply strike-through when completed */}
+                <span
+                  className={`task-text ${task.completed ? 'completed' : ''}`}
+                >
+                  {task.task}
+                </span>
+                <button
+                  className="btn btn-danger btn-sm"
+                  onClick={() => deleteTask(task.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
 
       <ul className="list-group ">
         {tasks.map((task) => (
