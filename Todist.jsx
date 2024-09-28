@@ -35,7 +35,7 @@ const TodoApp = () => {
   return (
     
     <div className="container todo-container bg-body-primary mt-5">
-      <h1 className="text-center text-black">To-Do List</h1>
+      <h1 className="text-center text-white">To-Do List</h1>
 
       <div className="input-group mb-3">
         <input
